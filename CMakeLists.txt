@@ -7,6 +7,21 @@ set(CMAKE_AUTOMOC ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
-add_executable(qt-desktop-test main.cpp)
+set(SOURCES
+    src/main.cpp
+    src/config.cpp
+    src/widgetfactory.cpp
+    src/shapewidget.cpp
+    src/mainwindow.cpp
+)
+
+set(HEADERS
+    src/config.h
+    src/widgetfactory.h
+    src/shapewidget.h
+    src/mainwindow.h
+)
+
+add_executable(qt-desktop-test ${SOURCES} ${HEADERS})
 
 target_link_libraries(qt-desktop-test PRIVATE Qt6::Widgets)
